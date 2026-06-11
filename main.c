@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include "logica.h"
 
+#define MINIMO 1
+#define MAXIMO 50
+
 int gerar_numero_secreto() {
     return 42;
 }
