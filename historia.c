@@ -1,5 +1,10 @@
 #include <stdio.h>
-#include "historia.h"
+#include <stdlib.h>
+#include <time.h>
+
+#define MINIMO 1
+#define MAXIMO 50
+#define MAX_TENTATIVAS 5
 
 void exibir_introducao() {
     printf("========================================\n");
