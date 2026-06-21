@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>O Mistério do Número Perdido</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Cinzel:wght@600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+</head>
+<body>
+
+  <div id="particles" aria-hidden="true"></div>
+
+  <main id="root">
+
+    <!-- TELA: INTRO -->
+    <section id="screen-intro" class="screen active" aria-label="Introdução">
+      <div class="intro-header">
+        <span class="eyebrow">Jogo-Enigma</span>
+        <h1>O Mistério do<br>Número Perdido</h1>
+        <p class="intro-desc">Um antigo guardião escondeu um número. Sua missão é descobri-lo antes que suas tentativas acabem.</p>
+      </div>
+      <div class="stat-trio">
+        <div class="stat-card">
+          <span class="stat-num">5</span>
+          <span class="stat-lbl">tentativas</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">1–50</span>
+          <span class="stat-lbl">intervalo</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">2</span>
+          <span class="stat-lbl">pistas iniciais</span>
+        </div>
+      </div>
+      <button class="btn-primary" onclick="iniciarJogo()">
+        <i class="ti ti-eye" aria-hidden="true"></i> Revelar o mistério
+      </button>
+      <p class="credit-line">Desenvolvido por Raynara, Mayara, Yan e Manuela</p>
+    </section>
+
+    <!-- TELA: JOGO -->
+    <section id="screen-game" class="screen" aria-label="Jogo">
+      <div class="game-header">
+        <button class="btn-ghost back-btn" onclick="irParaIntro()" aria-label="Voltar ao início">
+          <i class="ti ti-arrow-left" aria-hidden="true"></i>
+        </button>
+        <span class="eyebrow" style="margin:0">O Mistério</span>
+      </div>
+
+      <div class="pistas-area">
+        <p class="section-label">Pistas do guardião</p>
+        <div class="pista-row" id="pista-row"></div>
+      </div>
+
+      <div class="tentativas-area">
+        <p class="section-label">Tentativas <span id="tent-count-label"></span></p>
+        <div class="tentativas-bar" id="tent-bar"></div>
+      </div>
+
+      <div class="input-area">
+        <p class="section-label">Seu palpite</p>
+        <div class="slider-display" id="slider-val">25</div>
+        <input
+          type="range"
+          min="1" max="50"
+          value="25"
+          id="palpite-slider"
+          aria-label="Selecionar número"
+          oninput="syncSlider(this.value)"
+        />
+        <div class="slider-ends"><span>1</span><span>50</span></div>
+        <div class="input-row">
+          <input
+            type="number"
+            id="palpite-num"
+            min="1" max="50"
+            value="25"
+            placeholder="1 – 50"
+            aria-label="Digite seu palpite"
+            oninput="syncNum(this.value)"
+          />
+          <button class="btn-primary" id="btn-tentar" onclick="fazerTentativa()">
+            <i class="ti ti-check" aria-hidden="true"></i> Tentar
+          </button>
+        </div>
+        <p id="erro-val" class="erro-msg" role="alert" hidden>
+          <i class="ti ti-alert-circle" aria-hidden="true"></i> Digite um número entre 1 e 50.
+        </p>
+      </div>
+
+      <div class="log-area" id="log-area" hidden>
+        <p class="section-label">Mensagens do mistério</p>
+        <div class="msg-log" id="msg-log" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- TELA: RESULTADO -->
+    <section id="screen-result" class="screen" aria-label="Resultado">
+      <div class="result-box" id="result-box"></div>
+      <div class="result-actions">
+        <button class="btn-primary" onclick="iniciarJogo()">
+          <i class="ti ti-refresh" aria-hidden="true"></i> Jogar novamente
+        </button>
+        <button class="btn-ghost btn-outline" onclick="irParaIntro()">
+          <i class="ti ti-home" aria-hidden="true"></i> Início
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
