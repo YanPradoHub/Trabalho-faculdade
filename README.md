@@ -33,8 +33,6 @@ O projeto está organizado em módulos para facilitar a leitura e manutenção d
 | logica.c | Contém a lógica do jogo, geração do número secreto e verificação dos palpites. |
 | codigo_final.c | Versão final do projeto reunindo todas as funcionalidades. |
 
----
-
 ## 🎲 Como Funciona
 
 1. O sistema gera um número aleatório entre *1 e 50*.
@@ -44,3 +42,34 @@ O projeto está organizado em módulos para facilitar a leitura e manutenção d
 5. Caso acerte, o jogador vence.
 6. Caso utilize todas as tentativas, o número secreto é revelado.
 7. Ao final, o jogador pode escolher jogar novamente.
+
+## 💡 Funcionalidades
+
+- Número secreto aleatório.
+- Validação das entradas do usuário.
+- Dicas durante a partida.
+- Limite de tentativas.
+- Mensagens de vitória e derrota.
+- Opção de jogar novamente.
+- Código organizado em funções.
+
+## 📚 Conceitos de Lógica de Programação Utilizados
+
+Durante o desenvolvimento deste projeto foram aplicados diversos conceitos, entre eles:
+
+- Variáveis
+- Constantes (#define)
+- Funções
+- Estruturas condicionais (if e else)
+- Estruturas de repetição (for e do...while)
+- Geração de números aleatórios (rand)
+- Modularização do código
+- Entrada e saída de dados (scanf e printf)
+
+## ▶️ Como Executar
+
+1. Clone o repositório:
+2. Abra o projeto em uma IDE compatível com C (Dev-C++, Code::Blocks, Visual Studio Code ou outra).
+3. Compile o projeto.
+4. Execute o programa.
+
